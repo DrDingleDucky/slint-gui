@@ -66,13 +66,13 @@ slint::slint! {
         width: 64px;
         background: solved ? #34CE57 : #3960D5;
         animate background { duration: 800ms; }
-    
+
         Image {
             source: icon;
             width: parent.width;
             height: parent.height;
         }
-    
+
         // Left curtain
         Rectangle {
             background: #193076;
@@ -81,7 +81,7 @@ slint::slint! {
             height: parent.height;
             animate width { duration: 250ms; easing: ease-in; }
         }
-    
+
         // Right curtain
         Rectangle {
             background: #193076;
@@ -91,7 +91,7 @@ slint::slint! {
             animate width { duration: 250ms; easing: ease-in; }
             animate x { duration: 250ms; easing: ease-in; }
         }
-    
+
         TouchArea {
             clicked => {
                 // Delegate to the user of this element
@@ -99,7 +99,7 @@ slint::slint! {
             }
         }
     }
-    
+
     export component MainWindow inherits Window {
         width: 326px;
         height: 326px;
@@ -117,6 +117,7 @@ slint::slint! {
             { image: @image-url("icons/motorcycle.png") },
             { image: @image-url("icons/video.png") },
         ];
+
         for tile[i] in memory_tiles : MemoryTile {
             x: mod(i, 4) * 74px;
             y: floor(i / 4) * 74px;
