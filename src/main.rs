@@ -7,43 +7,75 @@ fn main() {
 }
 
 slint::slint!{
-    export component MainWindow inherits Window {
+    import { StandardButton , Button} from "std-widgets.slint";
+export component MainWindow inherits Window {
         icon: @image-url("icon/icon.png");
-        title: "";
-        min-width: 480px;
-        min-height: 270px;
-        preferred-width: 960px;
-        preferred-height: 540px;
+        title: "Calculator";
+        min-width: 270px;
+        min-height: 480px;
+        preferred-width: 324px;
+        preferred-height: 480px;
 
-        area := TouchArea {
-            x: rect2.x;
-            y: rect2.y;
-            width: rect2.width;
-            height: rect2.height;
-        }
-
-        rect1 := Rectangle {
-            x: 0px;
-            y: 0px;
-            width: 240px;
-            height: parent.height;
-            background: red;
-        }
-
-        rect2 := Rectangle {
-            x: rect1.x + rect1.width;
-            y: 0px;
-            width: 8px;
-            height: parent.height;
-            background: area.pressed ? yellow: green;
-        }
-
-        rect3 := Rectangle {
-            x: rect2.x + rect2.width;
-            y: 0px;
-            width: parent.width;
-            height: parent.height;
-            background: blue;
+        VerticalLayout {
+            HorizontalLayout {
+                Rectangle { background: orange;}
+            }
+            HorizontalLayout {
+                Rectangle {
+                    background: red;
+                }
+                Rectangle {
+                    background: green;
+                }
+                Rectangle {
+                    background: blue;
+                }
+                Rectangle {
+                    background: yellow;
+                }
+            }
+            HorizontalLayout {
+                Rectangle {
+                    background: green;
+                }
+                Rectangle {
+                    background: blue;
+                }
+                Rectangle {
+                    background: yellow;
+                }
+                Rectangle {
+                    background: red;
+                }
+            }
+            HorizontalLayout {
+                Rectangle {
+                    background: blue;
+                }
+                Rectangle {
+                    background: yellow;
+                }
+                Rectangle {
+                    background: red;
+                }
+                Rectangle {
+                    background: green;
+                }
+            }
+            HorizontalLayout {
+                Rectangle {
+                    background: yellow;
+                }
+                Rectangle {
+                    background: red;
+                }
+                Rectangle {
+                    background: green;
+                }
+                Rectangle {
+                    background: blue;
+                }
+            }
         }
     }
 }
