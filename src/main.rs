@@ -17,63 +17,173 @@ export component MainWindow inherits Window {
         preferred-height: 480px;
 
         VerticalLayout {
-            HorizontalLayout {
-                Rectangle { background: orange;}
-            }
-            HorizontalLayout {
-                Rectangle {
-                    background: red;
-                }
-                Rectangle {
-                    background: green;
-                }
-                Rectangle {
-                    background: blue;
-                }
-                Rectangle {
-                    background: yellow;
-                }
-            }
+            spacing: 8px;
+            padding: 8px;
             HorizontalLayout {
                 Rectangle {
-                    background: green;
-                }
-                Rectangle {
-                    background: blue;
-                }
-                Rectangle {
-                    background: yellow;
-                }
-                Rectangle {
-                    background: red;
+                    height: output.height;
+                    background: #FF8D8B;
+                    border-radius: 5px;
+                    output := Text {
+                        x: parent.x + 8px;
+                        width: parent.width - 16px;
+                        min-height: 48px;
+                        wrap: word-wrap;
+                        horizontal-alignment: left;
+                        vertical-alignment: center;
+                        font-size: 24px;
+                        text: "";
+                    }
                 }
             }
             HorizontalLayout {
-                Rectangle {
-                    background: blue;
+                spacing: 8px;
+                Button {
+                    text: "<";
+                    // clicked => {
+                    //     output.text = "";
+                    // }
                 }
-                Rectangle {
-                    background: yellow;
-                }
-                Rectangle {
-                    background: red;
-                }
-                Rectangle {
-                    background: green;
+                Button {
+                    text: "C";
+                    clicked => {
+                        output.text = "";
+                    }
                 }
             }
             HorizontalLayout {
-                Rectangle {
-                    background: yellow;
+                spacing: 8px;
+                Button {
+                    text: "(";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
                 }
-                Rectangle {
-                    background: red;
+                Button {
+                    text: ")";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
                 }
-                Rectangle {
-                    background: green;
+                Button {
+                    text: "^";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
                 }
-                Rectangle {
-                    background: blue;
+                Button {
+                    text: "/";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+            }
+            HorizontalLayout {
+                spacing: 8px;
+                Button {
+                    text: "7";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+                Button {
+                    text: "8";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+                Button {
+                    text: "9";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+                Button {
+                    text: "*";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+            }
+            HorizontalLayout {
+                spacing: 8px;
+                Button {
+                    text: "4";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+                Button {
+                    text: "5";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+                Button {
+                    text: "6";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+                Button {
+                    text: "-";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+            }
+            HorizontalLayout {
+                spacing: 8px;
+                Button {
+                    text: "1";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+                Button {
+                    text: "2";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+                Button {
+                    text: "3";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+                Button {
+                    text: "+";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+            }
+            HorizontalLayout {
+                spacing: 8px;
+                Button {
+                    text: "0";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+                Button {
+                    text: ".";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+                Button {
+                    text: "(-)";
+                    clicked => {
+                        output.text = output.text + self.text;
+                    }
+                }
+                Button {
+                    text: "=";
+                    // clicked => {
+                    //     output.text = output.text + self.text;
+                    // }
                 }
             }
         }
