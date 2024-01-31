@@ -8,14 +8,14 @@ export component MainWindow inherits Window {
     preferred-width: 324px;
     preferred-height: 480px;
 
+    in-out property <string> expression;
+    callback request-modify-expression();
+
     VerticalLayout {
         spacing: 8px;
         padding: 8px;
         HorizontalLayout {
-            Rectangle {
-                height: output.height;
-                background: #FF8D8B;
-                border-radius: 5px;
+            Rectangle {height: output.height; background: #FF8D8B; border-radius: 5px;
                 output := Text {
                     x: parent.x + 8px;
                     width: parent.width - 16px;
@@ -24,159 +24,49 @@ export component MainWindow inherits Window {
                     horizontal-alignment: left;
                     vertical-alignment: center;
                     font-size: 24px;
-                    text: "";
+                    text: root.expression;
                 }
             }
         }
         HorizontalLayout {
             spacing: 8px;
-            Button {
-                text: "<";
-                // clicked => {
-                //     output.text = "";
-                // }
-            }
-            Button {
-                text: "C";
-                clicked => {
-                    output.text = "";
-                }
-            }
+            Button {text: "<"; clicked => {root.request-modify-expression()}}
+            Button {text: "C"; clicked => {root.expression = ""}}
         }
         HorizontalLayout {
             spacing: 8px;
-            Button {
-                text: "(";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
-            Button {
-                text: ")";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
-            Button {
-                text: "^";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
-            Button {
-                text: "/";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
+            Button {text: "("; clicked => {root.expression = root.expression + self.text}}
+            Button {text: ")"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "^"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "/"; clicked => {root.expression = root.expression + self.text}}
         }
         HorizontalLayout {
             spacing: 8px;
-            Button {
-                text: "7";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
-            Button {
-                text: "8";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
-            Button {
-                text: "9";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
-            Button {
-                text: "*";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
+            Button {text: "7"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "8"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "9"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "*"; clicked => {root.expression = root.expression + self.text}}
         }
         HorizontalLayout {
             spacing: 8px;
-            Button {
-                text: "4";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
-            Button {
-                text: "5";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
-            Button {
-                text: "6";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
-            Button {
-                text: "-";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
+            Button {text: "4"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "5"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "6"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "-"; clicked => {root.expression = root.expression + self.text}}
         }
         HorizontalLayout {
             spacing: 8px;
-            Button {
-                text: "1";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
-            Button {
-                text: "2";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
-            Button {
-                text: "3";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
-            Button {
-                text: "+";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
+            Button {text: "1"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "2"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "3"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "+"; clicked => {root.expression = root.expression + self.text}}
         }
         HorizontalLayout {
             spacing: 8px;
-            Button {
-                text: "0";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
-            Button {
-                text: ".";
-                clicked => {
-                    output.text = output.text + self.text;
-                }
-            }
-            Button {
-                text: "(-)";
-                clicked => {
-                    output.text = output.text + "-";
-                }
-            }
-            Button {
-                text: "=";
-                // clicked => {
-                //     output.text = output.text + self.text;
-                // }
-            }
+            Button {text: "0"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "."; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "(-)"; clicked => {root.expression = root.expression + "-"}}
+            Button {text: "=";}
         }
     }
 }
