@@ -176,7 +176,7 @@ export component MainWindow inherits Window {
                 Button {
                     text: "(-)";
                     clicked => {
-                        output.text = output.text + self.text;
+                        output.text = output.text + "-";
                     }
                 }
                 Button {
