@@ -10,6 +10,7 @@ export component MainWindow inherits Window {
 
     in-out property <string> expression;
     callback request-modify-expression();
+    callback request-evaluate-expression();
 
     VerticalLayout {
         spacing: 8px;
@@ -35,38 +36,38 @@ export component MainWindow inherits Window {
         }
         HorizontalLayout {
             spacing: 8px;
-            Button {text: "("; clicked => {root.expression = root.expression + self.text}}
-            Button {text: ")"; clicked => {root.expression = root.expression + self.text}}
-            Button {text: "^"; clicked => {root.expression = root.expression + self.text}}
-            Button {text: "/"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "("; clicked => {root.expression = root.expression + " ( "}}
+            Button {text: ")"; clicked => {root.expression = root.expression + " ) "}}
+            Button {text: "^"; clicked => {root.expression = root.expression + " ^ "}}
+            Button {text: "/"; clicked => {root.expression = root.expression + " / "}}
         }
         HorizontalLayout {
             spacing: 8px;
             Button {text: "7"; clicked => {root.expression = root.expression + self.text}}
             Button {text: "8"; clicked => {root.expression = root.expression + self.text}}
             Button {text: "9"; clicked => {root.expression = root.expression + self.text}}
-            Button {text: "*"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "*"; clicked => {root.expression = root.expression + " * "}}
         }
         HorizontalLayout {
             spacing: 8px;
             Button {text: "4"; clicked => {root.expression = root.expression + self.text}}
             Button {text: "5"; clicked => {root.expression = root.expression + self.text}}
             Button {text: "6"; clicked => {root.expression = root.expression + self.text}}
-            Button {text: "-"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "-"; clicked => {root.expression = root.expression + " - "}}
         }
         HorizontalLayout {
             spacing: 8px;
             Button {text: "1"; clicked => {root.expression = root.expression + self.text}}
             Button {text: "2"; clicked => {root.expression = root.expression + self.text}}
             Button {text: "3"; clicked => {root.expression = root.expression + self.text}}
-            Button {text: "+"; clicked => {root.expression = root.expression + self.text}}
+            Button {text: "+"; clicked => {root.expression = root.expression + " + "}}
         }
         HorizontalLayout {
             spacing: 8px;
             Button {text: "0"; clicked => {root.expression = root.expression + self.text}}
             Button {text: "."; clicked => {root.expression = root.expression + self.text}}
-            Button {text: "(-)"; clicked => {root.expression = root.expression + "-"}}
-            Button {text: "=";}
+            Button {text: "(-)"; clicked => {root.expression = root.expression + " -"}}
+            Button {text: "="; clicked => {root.request-evaluate-expression()}}
         }
     }
 }
