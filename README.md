@@ -1,3 +1,3 @@
-# Sling GUI
+# Slint GUI
 
 Playing around with rust using slint.
