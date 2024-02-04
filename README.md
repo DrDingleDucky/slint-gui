@@ -1,6 +1,6 @@
 # Slint GUI
 
-Playing around with rust by bulding a simple calculator app.
+Playing around with rust by building a simple calculator app.
 
 ![calculator.png](README.assets/calculator.png)
 
