@@ -1,4 +1,4 @@
-# Slint GUI
+# Calculator GUI
 
 Playing around with rust by building a simple calculator app.
 
